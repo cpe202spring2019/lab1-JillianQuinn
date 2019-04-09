@@ -13,7 +13,7 @@ class Location:
         return "Location('{0}', {1}, {2})".format(self.name, self.lat, self.lon)
 
     def __eq__(self, other):
-        return type(other) == Location and self.lat == other.lat and self.lon == other.lon
+        return type(other) == Location and self.lat == other.lat and self.lon == other.lon and self.name == other.name
 
 
 def main():
