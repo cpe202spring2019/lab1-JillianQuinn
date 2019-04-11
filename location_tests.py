@@ -8,15 +8,31 @@ class TestLab1(unittest.TestCase):
         loc = Location("SLO", 35.3, -120.7)
         self.assertEqual(repr(loc), "Location('SLO', 35.3, -120.7)")
 
+        """Whole number check."""
+        loc = Location('Mercer Island', 20, 19)
+        self.assertEqual(repr(loc), "Location('Mercer Island', 20, 19)")
+
     def test_eq(self):
         loc = Location("SLO", 35.3, -120.7)
-        other = Location("SLO", 35.3, -120.7)
-        self.assertEqual(loc, other)
+        loc2 = Location("SLO", 35.3, -120.7)
+        loc3 = loc
+        loc4 = Location("Mercer Island", 20, 19)
+        """Test same location."""
+        self.assertEqual(loc, loc2)
+        self.assertTrue(loc == loc2)
+        """Test different locations."""
+        self.assertFalse(loc == loc4)
+        """Test same pointed location."""
+        self.assertTrue(loc == loc3)
+        """Test wrong type."""
+        self.assertFalse(loc == "SLO")
 
-        loc = Location("SLO",  35.3, -120.7)
-        other = loc
-        self.assertEqual(loc, other)
+    def test_init(self):
+        loc = Location("SLO", 35.3, -120.7)
+        self.assertEqual(loc.name, "SLO")
+        self.assertAlmostEqual(loc.lat, 35.3)
+        self.assertAlmostEqual(loc.lon, -120.7)
 
 
 if __name__ == "__main__":
-        unittest.main()
+    unittest.main()
