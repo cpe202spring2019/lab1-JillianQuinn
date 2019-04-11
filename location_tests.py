@@ -29,8 +29,11 @@ class TestLab1(unittest.TestCase):
 
     def test_init(self):
         loc = Location("SLO", 35.3, -120.7)
+        """Test the name"""
         self.assertEqual(loc.name, "SLO")
+        """Test the lat."""
         self.assertAlmostEqual(loc.lat, 35.3)
+        """Test the lon."""
         self.assertAlmostEqual(loc.lon, -120.7)
 
 
