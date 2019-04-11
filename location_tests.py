@@ -15,7 +15,6 @@ class TestLab1(unittest.TestCase):
 
     def test_eq(self):
         loc = Location("SLO", 35.3, -120.7)
-<<<<<<< HEAD
         loc2 = Location("SLO", 35.3, -120.7)
         loc3 = loc
         loc4 = Location("Mercer Island", 20, 19)
@@ -37,11 +36,9 @@ class TestLab1(unittest.TestCase):
         self.assertAlmostEqual(loc.lat, 35.3)
         """Test the lon."""
         self.assertAlmostEqual(loc.lon, -120.7)
-=======
         other = Location("SLO", 35.3, -120.7)
         """Test the equal function for different locations, same values"""
         self.assertEqual(loc, other)
-
         loc = Location("SLO",  35.3, -120.7)
         other = loc
         """Test the equal function for same location"""
@@ -49,13 +46,12 @@ class TestLab1(unittest.TestCase):
     
     def test_init(self):
         loc = Location("SLO",  35.3, -120.7)
-        """Test the name"""
+        """Test the location name"""
         self.assertEqual(loc.name, "SLO")
         """Test the lat."""
         self.assertEqual(loc.lat, 35.3)
         """Test the lon."""
-        self.assertEqual(loc.long, -120.7)
->>>>>>> 3986523068fbdca18c9556d82c34f0972da742f8
+        self.assertEqual(loc.lon, -120.7)
 
 
 if __name__ == "__main__":
